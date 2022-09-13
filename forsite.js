@@ -4,6 +4,7 @@ const calculationArray = calculation.replaceAll("+", " + ").replaceAll("*", " * 
 
 console.log(calculationArray)
 
+while (calculationArray.includes ("*")){
 for (let counter = 0; counter < calculationArray.length; counter++) {
     const element =calculationArray[counter];
     console.log(element)
@@ -14,7 +15,28 @@ if (element==="*") {
     calculationArray[counter+1]= ""
     calculationArray[counter]= ""
    
-    calculationArray=calculationArray.filter(e => e) 
     console.log(calculationArray)
 }    
+}
+}
+while (calculationArray.includes ("+")){
+for (let counter = 0; counter < calculationArray.length; counter++) {
+  const element = calculationArray[counter]
+  console.log(element)
+if (element ==="+"){
+    console.log(calculationArray[counter-1]+calculationArray[counter+1])
+    const ergebnis = Number(calculationArray[counter-1])+Number(calculationArray[counter+1])
+    calculationArray[counter-1]= ergebnis
+    calculationArray[counter+1]= ""
+    calculationArray[counter]= ""
+    console.log (calculationArray)
+}
+}
+}
+
+let Endergebnis = 0
+for (let counter = 0; counter < calculationArray.length; counter++) {
+   
+    Endergebnis += Number(calculationArray[counter]);
+    console.log(Endergebnis)
 }
