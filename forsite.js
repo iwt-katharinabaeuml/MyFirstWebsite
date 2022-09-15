@@ -1,4 +1,4 @@
-const calculation = "15+1+230/65";
+const calculation = "L9";
 
 let newstring = calculation.split(
   /(?<=[0-9])(\+|\-|\*|\/)(?=[0-9])|(?<=[0-9])(\+|\-|\*|\/)(?=\-[0-9])/
@@ -11,6 +11,10 @@ console.log(newstring);
 const calculationArray = newstring;
 
 console.log(calculationArray);
+
+if (calculationArray.includes("L")){
+  console.log("works")
+}
 
 while (calculationArray.includes("/") || calculationArray.includes("*")) {
   let counter;
@@ -49,9 +53,20 @@ while (calculationArray.includes("/") || calculationArray.includes("*")) {
       counter = 0;
       console.log(calculationArray);
     }
+    if (element === "√") {
+      console.log(Math.sqrt(Number(calculationArray[counter + 1])
+      ))
+      const ergebnis =
+      Math.sqrt(Number(calculationArray[counter + 1]))
+      console.log(ergebnis)
+      calculationArray[counter + 1] = ergebnis
+      calculationArray[counter] = y;
+      calculationArray.splice(calculationArray.indexOf("y"), 1);
+      counter = 0;
+      console.log(calculationArray);
   }
 }
-
+}
 while (calculationArray.includes("+") || calculationArray.includes("-")) {
   for (let counter = 0; counter < calculationArray.length; counter++) {
     const element = calculationArray[counter];
