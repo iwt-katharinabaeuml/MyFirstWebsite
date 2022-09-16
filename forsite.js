@@ -1,11 +1,13 @@
-const calculation = "(9+3)*(-2+2-7/2+√9)";
+const calculation = "(40/10*2)/(2*2)+(√9*2)";
 
 const paddedcalculation = calculation
   .replaceAll("(", " ( ")
   .replaceAll(")", " ) ");
 console.log("padded Klammern", paddedcalculation);
 
-const splittedcalculation = paddedcalculation.split(" ");
+let splittedcalculation = paddedcalculation.split(" ");
+
+splittedcalculation = splittedcalculation.filter((a) => a);
 
 console.log("splitted", splittedcalculation);
 
@@ -15,24 +17,25 @@ while (splittedcalculation.includes("(") && splittedcalculation.includes(")")) {
     const element = splittedcalculation[index];
     console.log(element);
     if (element === "(") {
-      console.log("teyt",Number(myFunction(splittedcalculation[index + 1])));
+      console.log("teyt", Number(myFunction(splittedcalculation[index + 1])));
       const Klammerergebnis = Number(
         myFunction(splittedcalculation[index + 1])
       );
-      splittedcalculation[index] = Klammerergebnis
-      splittedcalculation.splice (index + 1, 2)
+      splittedcalculation[index] = Klammerergebnis;
+      splittedcalculation.splice(index + 1, 2);
       index = 0;
+      splittedcalculation = splittedcalculation.filter((a) => a);
       console.log(Klammerergebnis);
     }
   }
 }
 
-console.log(splittedcalculation)
 
 
+const stringsplittedcalculation= splittedcalculation.join('')
+console.log(stringsplittedcalculation);
 
-
-
+myFunction(stringsplittedcalculation)
 
 
 // console.log(myFunction(calculation)); // ruft die funktion auf, sonst "passiert gar nichts"
@@ -48,6 +51,21 @@ function myFunction(calculation) {
   const calculationArray = newstring;
 
   console.log(calculationArray);
+
+  while (calculationArray.includes("√")) {
+    for (counter = 0; counter < calculationArray.length; counter++) {
+      const element = calculationArray[counter];
+      console.log(element);
+      if (element[0] === "√") {
+        console.log("test", element.replace("√", ""));
+        const number = Number(element.replace("√", ""));
+        console.log(calculationArray);
+        calculationArray[counter] = Math.sqrt(number);
+        console.log(calculationArray);
+        counter = 0;
+      }
+    }
+  }
 
   while (
     calculationArray.includes("√") ||
@@ -91,6 +109,7 @@ function myFunction(calculation) {
         console.log(calculationArray);
         calculationArray[counter] = Math.sqrt(number);
         console.log(calculationArray);
+        counter = 0;
       }
     }
   }
