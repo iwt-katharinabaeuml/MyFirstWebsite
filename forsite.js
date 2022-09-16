@@ -15,16 +15,25 @@ while (splittedcalculation.includes("(") && splittedcalculation.includes(")")) {
     const element = splittedcalculation[index];
     console.log(element);
     if (element === "(") {
-      console.log(Number(myFunction(splittedcalculation[index + 1])));
+      console.log("teyt",Number(myFunction(splittedcalculation[index + 1])));
       const Klammerergebnis = Number(
         myFunction(splittedcalculation[index + 1])
       );
-      splittedcalculation.splice(index, 3);
+      splittedcalculation[index] = Klammerergebnis
+      splittedcalculation.splice (index + 1, 2)
       index = 0;
-      console.log("test",Klammerergebnis);
+      console.log(Klammerergebnis);
     }
   }
 }
+
+console.log(splittedcalculation)
+
+
+
+
+
+
 
 // console.log(myFunction(calculation)); // ruft die funktion auf, sonst "passiert gar nichts"
 
