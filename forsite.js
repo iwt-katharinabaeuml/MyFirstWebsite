@@ -1,6 +1,32 @@
-const calculation = "9+3*-2+2-7/2+√9";
+const calculation = "(9+3)*(-2+2-7/2+√9)";
 
-console.log("Ergebnis", myFunction(calculation));
+const paddedcalculation = calculation
+  .replaceAll("(", " ( ")
+  .replaceAll(")", " ) ");
+console.log("padded Klammern", paddedcalculation);
+
+const splittedcalculation = paddedcalculation.split(" ");
+
+console.log("splitted", splittedcalculation);
+
+while (splittedcalculation.includes("(") && splittedcalculation.includes(")")) {
+  let index;
+  for (index = 0; index < splittedcalculation.length; index++) {
+    const element = splittedcalculation[index];
+    console.log(element);
+    if (element === "(") {
+      console.log(Number(myFunction(splittedcalculation[index + 1])));
+      const Klammerergebnis = Number(
+        myFunction(splittedcalculation[index + 1])
+      );
+      splittedcalculation.splice(index, 3);
+      index = 0;
+      console.log("test",Klammerergebnis);
+    }
+  }
+}
+
+// console.log(myFunction(calculation)); // ruft die funktion auf, sonst "passiert gar nichts"
 
 function myFunction(calculation) {
   let newstring = calculation.split(
@@ -46,7 +72,7 @@ function myFunction(calculation) {
           Number(calculationArray[counter + 1]);
         calculationArray[counter - 1] = ergebnis;
         calculationArray.splice(counter, 2);
-       
+
         counter = 0;
         console.log(calculationArray);
       }
@@ -72,7 +98,7 @@ function myFunction(calculation) {
           Number(calculationArray[counter - 1]) +
           Number(calculationArray[counter + 1]);
         calculationArray[counter - 1] = ergebnis;
-        calculationArray.splice(counter, 2)
+        calculationArray.splice(counter, 2);
         counter = 0;
         console.log(calculationArray);
       }
@@ -85,12 +111,12 @@ function myFunction(calculation) {
           Number(calculationArray[counter - 1]) -
           Number(calculationArray[counter + 1]);
         calculationArray[counter - 1] = ergebnis;
-        calculationArray.splice(counter, 2)
+        calculationArray.splice(counter, 2);
         counter = 0;
         console.log(calculationArray);
       }
     }
   }
-  return calculationArray[0]; //notwendig, damit man damit weiter rechnen kann (z.Bsp für Klammern), es wird kein 
+  return calculationArray[0]; //notwendig, damit man damit weiter rechnen kann (z.Bsp für Klammern), es wird kein
   // Array, in diesem Fall auch nur mit einem Element ausgegeben; z.Bsp [25], sondern eine Zahl (oder in anderen Fällen ein String)
 }
