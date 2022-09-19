@@ -1,5 +1,85 @@
-const calculation = "(40/10*2)/(2*2)+(√9*2)";
+// const calculation = "(40/10*2)/(2*2)+(√9*2)";
 
+
+document.getElementById("button-1").onclick = function () {
+  document.getElementById("result").innerText =
+    document.getElementById("result").innerText + "1";
+};
+document.getElementById("button-2").onclick = function () {
+  document.getElementById("result").innerText =
+    document.getElementById("result").innerText + "2";
+};
+document.getElementById("button-3").onclick = function () {
+  document.getElementById("result").innerText =
+    document.getElementById("result").innerText + "3";
+};
+document.getElementById("button-4").onclick = function () {
+  document.getElementById("result").innerText =
+    document.getElementById("result").innerText + "4";
+};
+document.getElementById("button-5").onclick = function () {
+  document.getElementById("result").innerText =
+    document.getElementById("result").innerText + "5";
+};
+document.getElementById("button-6").onclick = function () {
+  document.getElementById("result").innerText =
+    document.getElementById("result").innerText + "6";
+};
+document.getElementById("button-7").onclick = function () {
+  document.getElementById("result").innerText =
+    document.getElementById("result").innerText + "7";
+};
+document.getElementById("button-8").onclick = function () {
+  document.getElementById("result").innerText =
+    document.getElementById("result").innerText + "8";
+};
+document.getElementById("button-9").onclick = function () {
+  document.getElementById("result").innerText =
+    document.getElementById("result").innerText + "9";
+};
+document.getElementById("button--").onclick = function () {
+  document.getElementById("result").innerText =
+    document.getElementById("result").innerText + "-";
+};
+document.getElementById("button-+").onclick = function () {
+  document.getElementById("result").innerText =
+    document.getElementById("result").innerText + "+";
+};
+document.getElementById("button-0").onclick = function () {
+  document.getElementById("result").innerText =
+    document.getElementById("result").innerText + "0";
+};
+document.getElementById("button-.").onclick = function () {
+  document.getElementById("result").innerText =
+    document.getElementById("result").innerText + ".";
+};
+document.getElementById("button-/").onclick = function () {
+  document.getElementById("result").innerText =
+    document.getElementById("result").innerText + "/";
+};
+document.getElementById("button-*").onclick = function () {
+  document.getElementById("result").innerText =
+    document.getElementById("result").innerText + "*";
+};
+document.getElementById("button-(").onclick = function () {
+  document.getElementById("result").innerText =
+    document.getElementById("result").innerText + "(";
+    
+};document.getElementById("button-)").onclick = function () {
+  document.getElementById("result").innerText =
+    document.getElementById("result").innerText + ")";
+};
+
+document.getElementById("C").onclick = function () {
+  document.getElementById("result").innerText = " ";
+};
+
+document.getElementById("button-=").onclick = function () {
+  rechnung = document.getElementById("result").innerText;
+  ergebnis = ""
+//
+
+const calculation = rechnung
 const paddedcalculation = calculation
   .replaceAll("(", " ( ")
   .replaceAll(")", " ) ");
@@ -30,13 +110,10 @@ while (splittedcalculation.includes("(") && splittedcalculation.includes(")")) {
   }
 }
 
-
-
-const stringsplittedcalculation= splittedcalculation.join('')
+const stringsplittedcalculation = splittedcalculation.join("");
 console.log(stringsplittedcalculation);
 
-myFunction(stringsplittedcalculation)
-
+myFunction(stringsplittedcalculation);
 
 // console.log(myFunction(calculation)); // ruft die funktion auf, sonst "passiert gar nichts"
 
@@ -144,7 +221,13 @@ function myFunction(calculation) {
         console.log(calculationArray);
       }
     }
-  }
+  }console.log("testytest",calculationArray[0]);
+ document.getElementById("result").innerText = calculationArray[0]
   return calculationArray[0]; //notwendig, damit man damit weiter rechnen kann (z.Bsp für Klammern), es wird kein
   // Array, in diesem Fall auch nur mit einem Element ausgegeben; z.Bsp [25], sondern eine Zahl (oder in anderen Fällen ein String)
+
+  
+
 }
+}
+
