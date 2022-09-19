@@ -1,85 +1,85 @@
-// const calculation = "(40/10*2)/(2*2)+(√9*2)";
+const calculation = "(40/10*2)/(2*2)+(√9*2)";
 
 
-document.getElementById("button-1").onclick = function () {
-  document.getElementById("result").innerText =
-    document.getElementById("result").innerText + "1";
-};
-document.getElementById("button-2").onclick = function () {
-  document.getElementById("result").innerText =
-    document.getElementById("result").innerText + "2";
-};
-document.getElementById("button-3").onclick = function () {
-  document.getElementById("result").innerText =
-    document.getElementById("result").innerText + "3";
-};
-document.getElementById("button-4").onclick = function () {
-  document.getElementById("result").innerText =
-    document.getElementById("result").innerText + "4";
-};
-document.getElementById("button-5").onclick = function () {
-  document.getElementById("result").innerText =
-    document.getElementById("result").innerText + "5";
-};
-document.getElementById("button-6").onclick = function () {
-  document.getElementById("result").innerText =
-    document.getElementById("result").innerText + "6";
-};
-document.getElementById("button-7").onclick = function () {
-  document.getElementById("result").innerText =
-    document.getElementById("result").innerText + "7";
-};
-document.getElementById("button-8").onclick = function () {
-  document.getElementById("result").innerText =
-    document.getElementById("result").innerText + "8";
-};
-document.getElementById("button-9").onclick = function () {
-  document.getElementById("result").innerText =
-    document.getElementById("result").innerText + "9";
-};
-document.getElementById("button--").onclick = function () {
-  document.getElementById("result").innerText =
-    document.getElementById("result").innerText + "-";
-};
-document.getElementById("button-+").onclick = function () {
-  document.getElementById("result").innerText =
-    document.getElementById("result").innerText + "+";
-};
-document.getElementById("button-0").onclick = function () {
-  document.getElementById("result").innerText =
-    document.getElementById("result").innerText + "0";
-};
-document.getElementById("button-.").onclick = function () {
-  document.getElementById("result").innerText =
-    document.getElementById("result").innerText + ".";
-};
-document.getElementById("button-/").onclick = function () {
-  document.getElementById("result").innerText =
-    document.getElementById("result").innerText + "/";
-};
-document.getElementById("button-*").onclick = function () {
-  document.getElementById("result").innerText =
-    document.getElementById("result").innerText + "*";
-};
-document.getElementById("button-(").onclick = function () {
-  document.getElementById("result").innerText =
-    document.getElementById("result").innerText + "(";
+// document.getElementById("button-1").onclick = function () {
+//   document.getElementById("result").innerText =
+//     document.getElementById("result").innerText + "1";
+// };
+// document.getElementById("button-2").onclick = function () {
+//   document.getElementById("result").innerText =
+//     document.getElementById("result").innerText + "2";
+// };
+// document.getElementById("button-3").onclick = function () {
+//   document.getElementById("result").innerText =
+//     document.getElementById("result").innerText + "3";
+// };
+// document.getElementById("button-4").onclick = function () {
+//   document.getElementById("result").innerText =
+//     document.getElementById("result").innerText + "4";
+// };
+// document.getElementById("button-5").onclick = function () {
+//   document.getElementById("result").innerText =
+//     document.getElementById("result").innerText + "5";
+// };
+// document.getElementById("button-6").onclick = function () {
+//   document.getElementById("result").innerText =
+//     document.getElementById("result").innerText + "6";
+// };
+// document.getElementById("button-7").onclick = function () {
+//   document.getElementById("result").innerText =
+//     document.getElementById("result").innerText + "7";
+// };
+// document.getElementById("button-8").onclick = function () {
+//   document.getElementById("result").innerText =
+//     document.getElementById("result").innerText + "8";
+// };
+// document.getElementById("button-9").onclick = function () {
+//   document.getElementById("result").innerText =
+//     document.getElementById("result").innerText + "9";
+// };
+// document.getElementById("button--").onclick = function () {
+//   document.getElementById("result").innerText =
+//     document.getElementById("result").innerText + "-";
+// };
+// document.getElementById("button-+").onclick = function () {
+//   document.getElementById("result").innerText =
+//     document.getElementById("result").innerText + "+";
+// };
+// document.getElementById("button-0").onclick = function () {
+//   document.getElementById("result").innerText =
+//     document.getElementById("result").innerText + "0";
+// };
+// document.getElementById("button-.").onclick = function () {
+//   document.getElementById("result").innerText =
+//     document.getElementById("result").innerText + ".";
+// };
+// document.getElementById("button-/").onclick = function () {
+//   document.getElementById("result").innerText =
+//     document.getElementById("result").innerText + "/";
+// };
+// document.getElementById("button-*").onclick = function () {
+//   document.getElementById("result").innerText =
+//     document.getElementById("result").innerText + "*";
+// };
+// document.getElementById("button-(").onclick = function () {
+//   document.getElementById("result").innerText =
+//     document.getElementById("result").innerText + "(";
     
-};document.getElementById("button-)").onclick = function () {
-  document.getElementById("result").innerText =
-    document.getElementById("result").innerText + ")";
-};
+// };document.getElementById("button-)").onclick = function () {
+//   document.getElementById("result").innerText =
+//     document.getElementById("result").innerText + ")";
+// };
 
-document.getElementById("C").onclick = function () {
-  document.getElementById("result").innerText = " ";
-};
+// document.getElementById("C").onclick = function () {
+//   document.getElementById("result").innerText = " ";
+// };
 
-document.getElementById("button-=").onclick = function () {
-  rechnung = document.getElementById("result").innerText;
-  ergebnis = ""
+// document.getElementById("button-=").onclick = function () {
+//   rechnung = document.getElementById("result").innerText;
+//   ergebnis = ""
 //
 
-const calculation = rechnung
+// const calculation = rechnung
 const paddedcalculation = calculation
   .replaceAll("(", " ( ")
   .replaceAll(")", " ) ");
@@ -129,20 +129,7 @@ function myFunction(calculation) {
 
   console.log(calculationArray);
 
-  while (calculationArray.includes("√")) {
-    for (counter = 0; counter < calculationArray.length; counter++) {
-      const element = calculationArray[counter];
-      console.log(element);
-      if (element[0] === "√") {
-        console.log("test", element.replace("√", ""));
-        const number = Number(element.replace("√", ""));
-        console.log(calculationArray);
-        calculationArray[counter] = Math.sqrt(number);
-        console.log(calculationArray);
-        counter = 0;
-      }
-    }
-  }
+ 
 
   while (
     calculationArray.includes("√") ||
@@ -228,6 +215,5 @@ function myFunction(calculation) {
 
   
 
-}
 }
 
